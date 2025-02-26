@@ -15,5 +15,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 mkdir -p ~/.vim/colors
 curl -o ~/.vim/colors/atom-dark.vim https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark.vim
 
+# VScode
+brew install --cask visual-studio-code
+
 # Kubernetes
 brew install kubectl
