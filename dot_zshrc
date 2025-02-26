@@ -1,0 +1,55 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="${HOME}/.oh-my-zsh"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(git vi-mode tmux zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+POWERLEVEL9K_MODE="awesome-patched"
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+#P10K config
+source ~/.p10k
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
+
+# ZSH syntax highlighting
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
+
+# Shortcut commands
+alias reload='source ~/.zshrc'
+alias edit='vim ~/.zshrc'
+alias hosts-file='sudo vim /etc/hosts'
+alias flush-dns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias vi='vim'
+alias vim-copy='vim -u ~/.dotfiles/vim/copy'
+alias vi-copy='vim-copy'
+
+# Git
+alias gp='git pull'
+alias gpu='git push'
+alias gc='git commit -m'
+alias ga='git add'
+alias gs='git status'
+alias gr='git rm'
+alias gch='git checkout'
+alias gcl='git clone'
+alias personal-git='git config user.email "bas@kraai.email"; git config user.name "baskraai"
+alias sue-git='git config user.email "bas.kraai@sue.nl"; git config user.name "Bas Kraai"'
+
+# Shortcuts ssh
+alias ssh-once='ssh -o "UserKnownHostsFile /dev/null"'
+alias ssh-root='ssh -l root'
+alias ssh-legacy='ssh -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1'
+alias ssh-known-hosts='vim /Users/bas.kraai/.ssh/known_hosts'
+
+# Kubernetes
+export KUBE_EDITOR="vim"
+
+alias k='kubectl'
+alias kx='kubectl config use-context'
+alias kx-ctx='kubectl config set-context --namespace='

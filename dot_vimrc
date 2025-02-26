@@ -1,0 +1,29 @@
+filetype plugin indent on
+syntax on
+set nocompatible
+colo atom-dark
+" turn hybrid line numbers on
+set number relativenumber
+set nu rnu
+
+set ttymouse=xterm2
+set mouse=a
+
+set spellfile=~/.vim/spell/en.utf-8.add
+
+call plug#begin()
+  Plug 'preservim/nerdtree'
+  Plug 'hashivim/vim-terraform'
+  Plug 'sainnhe/sonokai'
+  Plug 'tpope/vim-fugitive'
+  Plug 'morhetz/gruvbox'
+  Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+set background=dark
+
+set clipboard+=unnamed

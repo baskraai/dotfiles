@@ -1,0 +1,30 @@
+Host *
+	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+Host gitlab.com
+ IdentityFile ~/.ssh/sue.pub
+Host gitlab-famgit
+    Hostname gitlab.familiekraai.nl
+    User git
+    Port 2222
+    IdentityFile ~/.ssh/prive.pub
+    IdentitiesOnly yes
+Host gitlab-prive
+    Hostname gitlab.com
+    User git
+    IdentityFile ~/.ssh/prive.pub
+    IdentitiesOnly yes
+Host github-prive
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/prive.pub
+    IdentitiesOnly yes
+Host gitlab-sue
+    Hostname gitlab.com
+    User git
+    IdentityFile ~/.ssh/sue.pub
+    IdentitiesOnly yes
+Host github-sue
+    Hostname github.com
+    User git
+    IdentityFile ~/.ssh/sue.pub
+    IdentitiesOnly yes
