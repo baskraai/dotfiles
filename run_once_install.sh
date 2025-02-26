@@ -18,5 +18,8 @@ curl -o ~/.vim/colors/atom-dark.vim https://raw.githubusercontent.com/gosukiwi/v
 # VScode
 brew install --cask visual-studio-code
 
+# Docker
+brew install --cask docker
+
 # Kubernetes
 brew install kubectl
